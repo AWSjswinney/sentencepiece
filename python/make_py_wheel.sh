@@ -72,6 +72,8 @@ build() {
 
 if [ "$1" = "native" ]; then
   build $2
+elif [ "$1" = "aarch64" ]; then
+  run_docker quay.io/pypa/manylinux2014_aarch64
 elif [ "$#" -eq 1 ]; then
   run_docker quay.io/pypa/manylinux1_${1}  ${1}
 else
